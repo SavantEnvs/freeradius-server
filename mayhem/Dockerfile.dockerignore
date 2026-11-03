@@ -1,0 +1,6 @@
+# Takes precedence over the upstream root .dockerignore, which also drops tracked directories
+# (scripts/docker/m4, scripts/docker/build): the image must hold the full tracked tree and .git.
+build/
+prof-results/
+*.swp
+.DS_Store
