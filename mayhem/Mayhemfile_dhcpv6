@@ -1,0 +1,8 @@
+project: savantenvs/freeradius-server
+target: fuzzer_dhcpv6
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzzer_dhcpv6/testsuite
+cmds:
+  - cmd: /mayhem/build/bin/local/fuzzer_dhcpv6
+    libfuzzer: true
