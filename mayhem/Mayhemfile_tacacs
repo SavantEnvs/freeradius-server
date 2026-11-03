@@ -1,0 +1,8 @@
+project: savantenvs/freeradius-server
+target: fuzzer_tacacs
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzzer_tacacs/testsuite
+cmds:
+  - cmd: /mayhem/build/bin/local/fuzzer_tacacs
+    libfuzzer: true

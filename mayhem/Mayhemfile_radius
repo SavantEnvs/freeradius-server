@@ -1,0 +1,8 @@
+project: savantenvs/freeradius-server
+target: fuzzer_radius
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzzer_radius/testsuite
+cmds:
+  - cmd: /mayhem/build/bin/local/fuzzer_radius
+    libfuzzer: true
