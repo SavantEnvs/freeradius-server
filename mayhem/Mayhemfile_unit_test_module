@@ -1,0 +1,11 @@
+project: savantenvs/freeradius-server
+target: unit_test_module-mined-a3ceda8
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/unit_test_module-mined-a3ceda8/testsuite
+cmds:
+  # The input is a whole server configuration: unit_test_module reads <confdir>/<name>.conf, so -d / -n tmp/fuzz
+  # names /tmp/fuzz.conf, where Mayhem stages it (confdir must not be world-writable, which /tmp is).
+  - cmd: /mayhem/build/bin/local/unit_test_module -d / -n tmp/fuzz -i /mayhem/mayhem/unit_test_module-mined-a3ceda8/input.attrs -r receipt @@  # mayhem-lint: ok-image-path
+    filepath: /tmp/fuzz.conf
+    timeout: 10

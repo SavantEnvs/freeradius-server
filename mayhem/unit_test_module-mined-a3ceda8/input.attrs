@@ -1,0 +1,3 @@
+Packet-Type = Access-Request
+User-Name = "bob"
+User-Password = "hello"
