@@ -1,0 +1,9 @@
+project: savantenvs/freeradius-server
+target: unit_test_module-mined-a3ceda8
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/unit_test_module-mined-a3ceda8/testsuite
+cmds:
+  # The input is a whole server configuration; the driver stages it as a private <confdir>/<name>.conf.
+  - cmd: /mayhem/build/mayhem/unit_test_module_run @@  # mayhem-lint: ok-image-path
+    timeout: 10
